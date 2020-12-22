@@ -40,10 +40,10 @@ public class HelloWorld {
         System.out.println("The new account ID is: " +newAccountId);
 
         //Check the new account's balance
-        Hbar accountBalance = new AccountBalanceQuery()
+        /*Hbar accountBalance = new AccountBalanceQuery()
                 .setAccountId(newAccountId)
                 .execute(client);
 
-        System.out.println("The new account balance is: " +accountBalance);
+        System.out.println("The new account balance is: " +accountBalance);*/
     }
 }
