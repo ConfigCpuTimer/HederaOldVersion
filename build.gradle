@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    google()
+    jcenter()
+    // maven库
+    def cn = "http://maven.aliyun.com/nexus/content/groups/public/"
+    def abroad = "http://central.maven.org/maven2/"
+    // 先从url中下载jar若没有找到，则在artifactUrls中寻找
+    maven {
+        url cn
+        artifactUrls abroad
+    }
+}
+
+dependencies {
+    implementation 'com.hedera.hashgraph:sdk:1.1.5'
+    implementation 'io.grpc:grpc-netty-shaded:1.24.0'
+    compile 'io.github.cdimascio:java-dotenv:5.2.1' // Module that stores your environment variables from a .env file
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
